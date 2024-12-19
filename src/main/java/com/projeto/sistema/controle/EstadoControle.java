@@ -45,4 +45,11 @@ public class EstadoControle {
 		Optional<Estado> estado = estadoRepositorio.findById(id);
 		return cadastrar(estado.get());
 	}
+	
+	@GetMapping("/remover-estado/{id}")
+	public ModelAndView remover(@PathVariable("id") Long id) {
+		Optional<Estado> estado = estadoRepositorio.findById(id);
+		estadoRepositorio.delete(estado.get());
+		return listar();
+	}
 }

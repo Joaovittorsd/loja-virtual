@@ -1,13 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Olá Mundo!</h1>
-    <a href="/cadastro-estado">Cadastrar</a>
-    <a href="/listar-estado">Listar</a>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+     
+    <title>Bootstrap Demo</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/img/logo.png" alt="Logo" width="50" height="44" class="d-inline-block align-text-center">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2" style="padding: 0;">
+                <ul class="list-group" style="border-radius: 0;">
+                    <li class="list-group-item navbar-dark bg-dark active" style="border: 0;"><i class="fa-solid fa-gears" style="color: #ffffff;"></i> Funcionalidades</li>
+                    <a class="navbar-brand" href="/cadastro-venda"><li class="list-group-item">Efetuar Venda</li></a>
+                    <a class="navbar-brand" href="/listar-venda"><li class="list-group-item">Listar Vendas</li></a>
+                   	<a class="navbar-brand" href="/cadastro-entrada"><li class="list-group-item">Efetuar Entrada</li></a>
+                   	<a class="navbar-brand" href="/listar-entrada"><li class="list-group-item">Listar Entradas</li></a>
+                     
+                     <li class="list-group-item navbar-dark bg-dark active" style="border: 0;"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Cadastros</li>
+                     <a class="navbar-brand" href="/cadastro-estado"><li class="list-group-item">Cadastro Estado</li></a>
+                     <a class="navbar-brand" href="/cadastro-cidade"><li class="list-group-item">Cadastro Cidade</li></a>
+                     <a class="navbar-brand" href="/cadastro-funcionario"><li class="list-group-item">Cadastro Funcionário</li></a>
+                     <a class="navbar-brand" href="/cadastro-cliente"><li class="list-group-item">Cadastro Cliente</li></a>
+                     <a class="navbar-brand" href="/cadastro-fornecedor"><li class="list-group-item">Cadastro Fornecedor</li></a>
+                     <a class="navbar-brand" href="/cadastro-produto"><li class="list-group-item">Cadastro Produto</li></a>
+                   
+                    <li class="list-group-item navbar-dark bg-dark active" style="border: 0;"><i class="fa-solid fa-list-check" style="color: #ffffff;"></i> Listas</li>
+                    <a class="navbar-brand" href="/listar-estado"><li class="list-group-item">Listar Estado</li></a>
+                    <a class="navbar-brand" href="/listar-cidade"><li class="list-group-item">Listar Cidade</li></a>
+                    <a class="navbar-brand" href="/listar-funcionario"><li class="list-group-item">Listar Funcionário</li></a>
+                    <a class="navbar-brand" href="/listar-cliente"><li class="list-group-item">Listar Cliente</li></a>
+                    <a class="navbar-brand" href="/listar-fornecedor"><li class="list-group-item">Listar Fornecedor</li></a>
+                    <a class="navbar-brand" href="/listar-produto"><li class="list-group-item">Listar Produto</li></a>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <h1>Bem vindo ao sistema de vendas</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita consequatur at minima nulla fugiat voluptatem sequi doloribus, deserunt quae dicta, eaque id ex quia quo. Nihil ad esse dolor cupiditate.</p>
+            </div>
+        </div>
+    </div>
+  </body>
 </html>
