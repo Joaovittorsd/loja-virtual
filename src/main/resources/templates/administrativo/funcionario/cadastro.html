@@ -41,22 +41,52 @@
    </nav>
     
     <div class="container col-md-3">
-       <form action="/salvar-cidade" th:object="${cidade}" method="POST">
+       <form action="/salvar-funcionario" th:object="${funcionario}" method="POST">
         <div class="mb-3">
        		  <div class="col-md-5">
        		  	<label for="id" class="form-label">Registro</label>
-	          	<input type="text" readonly="true" class="form-control" id="nome" th:field="*{id}">
+	          	<input type="text" readonly="true" class="form-control" th:field="*{id}">
        		  </div>
 	          
-	          <label for="nome" class="form-label">Cidade:</label>
-	          <input type="text" required class="form-control" id="nome" th:field="*{nome}">
-	
-	          <label for="cep" class="form-label">CEP:</label>
-	          <input type="text" required class="form-control" id="cep" th:field="*{cep}">
+	          <label for="nome" class="form-label">Nome Funcionario:</label>
+	          <input type="text" required class="form-control" th:field="*{nome}">
 	          
-	          <label for="estado" class="form-label">Estado:</label>
-	          <select th:field="*{estado}" class="form-select">
-	          	<option th:each="est : ${listaEstados}" th:value="${est.id}" th:text="${est.nome}"></option>
+	          <div class="row">
+		        <div class="col">
+	        		 <label for="nome" class="form-label">CPF:</label>
+	         		 <input type="text" required class="form-control" id="cpf" th:field="*{cpf}">
+		        </div>
+		        
+		        <div class="col">
+			        <label for="nome" class="form-label">Telefone:</label>
+		            <input type="text" required class="form-control" id="telefone" th:field="*{telefone}">
+		        </div>
+		      </div>
+		      
+		      <div class="row">
+		        <div class="col">
+	        		 <label for="nome" class="form-label">Endereço:</label>
+	          		 <input type="text" required class="form-control" th:field="*{endereco}">
+		        </div>
+		        
+		        <div class="col-2">
+			        <label for="nome" class="form-label">Número:</label>
+	          		<input type="text" required class="form-control" th:field="*{numero}">
+		        </div>
+		      </div>
+	          
+	          <label for="nome" class="form-label">Bairro:</label>
+	          <input type="text" required class="form-control" th:field="*{bairro}">
+	          
+	          <label for="nome" class="form-label">E-mail:</label>
+	          <input type="text" required class="form-control" th:field="*{email}">
+	          
+	          <label for="nome" class="form-label">Função:</label>
+	          <input type="text" required class="form-control" th:field="*{funcao}">
+	          
+	          <label for="cidade" class="form-label">Cidade:</label>
+	          <select th:field="*{cidade}" class="form-select">
+	          	<option th:each="est : ${listaCidades}" th:value="${est.id}" th:text="${est.nome}"></option>
 	          </select>
 	          
         </div>
@@ -64,7 +94,7 @@
           <button type="submit" class="btn btn-primary"><i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i> Salvar</button>
         </a>
          <a href="/administrativo" class="btn btn-danger"><i class="fa-solid fa-share" style="color: #ffffff;"></i> Voltar</a>
-         <a href="/listar-cidade" class="btn btn-success"><i class="fa-solid fa-list" style="color: #ffffff;"></i> Listar</a>
+         <a href="/listar-funcionario" class="btn btn-success"><i class="fa-solid fa-list" style="color: #ffffff;"></i> Listar</a>
       </form>
     </div>
 	
@@ -72,7 +102,8 @@
 	
     <script>
 	    $(document).ready(function () {
-	    	 $('#cep').mask('00000-000');
+	    	 $('#cpf').mask('000.000.000-00');
+	    	 $('#telefone').mask('(00) 00000-0000');
 	    });
 	</script>
   </body>

@@ -42,32 +42,46 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
      </div>
    </nav>
     
-    <div class="container">
+    <div class="container-fluid">
     
 	     <table class="table" id="tabela">
 	        <thead class="table-dark">
 	           	<tr>
 	           		<td scope="col">#</td>
 		            <td scope="col">Nome</td>
-		            <td scope="col">Sigla</td>
+		            <td scope="col">CPF</td>
+		            <td scope="col">Telefone</td>
+		            <td scope="col">Endereco</td>
+		            <td scope="col">Numero</td>
+		            <td scope="col">Bairro</td>
+		            <td scope="col">E-mail</td>
+		            <td scope="col">Funcao</td>
+		            <td scope="col">Cidade</td>
 		            <td scope="col">Ação</td>
 	           	</tr>
 	        </thead>
 	
 	        <tbody>
-	            <tr th:each="estado: ${listarEstados}">
-	                <td th:text="${estado.id}"></td>
-	                <td th:text="${estado.nome}"></td>
-	                <td th:text="${estado.sigla}"></td>
+	            <tr th:each="funcionario: ${listarFuncionarios}">
+	                <td th:text="${funcionario.id}"></td>
+	                <td th:text="${funcionario.nome}"></td>
+	                <td th:text="${funcionario.cpf}"></td>
+	                <td th:text="${funcionario.telefone}"></td>
+	                <td th:text="${funcionario.endereco}"></td>
+	                <td th:text="${funcionario.numero}"></td>
+	                <td th:text="${funcionario.bairro}"></td>
+	                <td th:text="${funcionario.email}"></td>
+	                <td th:text="${funcionario.funcao}"></td>
+	                <td th:text="${funcionario.cidade.nome}"></td>
 	                <td colspan="2">
-	                    <a th:href="@{/editar-estado/{id}(id=${estado.id})}"><i class="fa-regular fa-pen-to-square" style="color: #000000; padding: 0 10px;"></i></a>
-	                    <a th:href="@{/remover-estado/{id}(id=${estado.id})}"><i class="fa-solid fa-trash" style="color: #000000; padding: 0 10px;"></i></a>
+	                    <a th:href="@{/editar-funcionario/{id}(id=${funcionario.id})}"><i class="fa-regular fa-pen-to-square" style="color: #000000; padding: 0 10px;"></i></a>
+	                    <a th:href="@{/remover-funcionario/{id}(id=${funcionario.id})}"><i class="fa-solid fa-trash" style="color: #000000; padding: 0 10px;"></i></a>
 	                </td>
 	
 	            </tr>
 	        </tbody>
 	     </table>
-        <a href="/cadastro-estado" class="btn btn-primary"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Cadastrar</a>
+        <a href="/cadastro-funcionario" class="btn btn-primary"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Cadastrar</a>
         <a href="/administrativo" class="btn btn-danger"><i class="fa-solid fa-share" style="color: #ffffff;"></i> Voltar</a>
     </div>
     
