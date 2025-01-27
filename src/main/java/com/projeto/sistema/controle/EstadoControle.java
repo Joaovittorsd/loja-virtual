@@ -21,13 +21,13 @@ public class EstadoControle {
 	
 	@GetMapping("/cadastro-estado")
 	public ModelAndView cadastrar(Estado estado) {
-		ModelAndView mv = new ModelAndView("administrativo/estados/cadastro");
+		ModelAndView mv = new ModelAndView("administrativo/estado/cadastro");
 		return mv.addObject("estado", estado);
 	}
 	
 	@GetMapping("/listar-estado")
 	public ModelAndView listar() {
-		ModelAndView mv = new ModelAndView("administrativo/estados/lista");
+		ModelAndView mv = new ModelAndView("administrativo/estado/lista");
 		return mv.addObject("listarEstados", estadoRepositorio.findAll());
 	}
 	

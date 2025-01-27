@@ -1,0 +1,51 @@
+<head th:insert="~{layouts/header}">
+<div th:insert="~{layouts/nav}"></div>
+
+<div class="container col-md-3">
+	<form action="/salvar-produto" th:object="${produto}" method="POST">
+		<div class="mb-3">
+		<div class="col-md-5">
+			<label for="id" class="form-label">Registro:</label>
+			<input type="text" readonly="true" class="form-control" th:field="*{id}">
+		</div>     
+			<label for="nome" class="form-label">Nome Produto:</label>
+			<input type="text" required class="form-control" th:field="*{nome}">      
+		<div class="row">
+			<div class="col">
+				<label for="nome" class="form-label">Código de Barras:</label>
+				<input type="text" required class="form-control" th:field="*{codigoBarras}">
+			</div>    
+			<div class="col">
+				<label for="nome" class="form-label">Unidade de Medida:</label>
+				<input type="text" required class="form-control" th:field="*{unidadeMedida}">
+			</div>
+		</div> 
+		<div class="row">
+			<div class="col">
+				<label for="nome" class="form-label">Estoque:</label>
+				<input type="number" required class="form-control" th:field="*{estoque}">
+			</div>    
+			<div class="col">
+				<label for="nome" class="form-label">Preço de Custo:</label>
+				<input type="number" required class="form-control" th:field="*{precoCusto}">
+			</div>
+		</div>      
+			<div class="">
+				<label for="nome" class="form-label">Preço de Venda:</label>
+				<input type="number" required class="form-control" th:field="*{precoVenda}">     
+				<label for="nome" class="form-label">Lucro:</label>
+				<input type="number" required class="form-control" th:field="*{lucro}">     
+				<label for="nome" class="form-label">Margem de Lucro:</label>
+				<input type="number" required class="form-control" th:field="*{margemLucro}">
+			</div>
+		</div>
+		<a href="#" class="navbar-brand">
+		<button type="submit" class="btn btn-primary"><i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i> Salvar</button>
+		</a>
+		<a href="/administrativo" class="btn btn-danger"><i class="fa-solid fa-share" style="color: #ffffff;"></i> Voltar</a>
+		<a href="/listar-produto" class="btn btn-success"><i class="fa-solid fa-list" style="color: #ffffff;"></i> Listar</a>
+	</form>
+</div>
+
+<div th:insert="~{layouts/footer}"></div>
+

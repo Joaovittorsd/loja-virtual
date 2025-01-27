@@ -1,0 +1,45 @@
+<head th:insert="~{layouts/header}">
+<div th:insert="~{layouts/nav}"></div>
+
+    <div class="container-fluid">
+    
+	     <table class="table" id="tabela">
+	        <thead class="table-dark">
+	           	<tr>
+	           		<td scope="col">#</td>
+		            <td scope="col">Nome</td>
+		            <td scope="col">Código de Barras</td>
+		            <td scope="col">Unidade</td>
+		            <td scope="col">Estoque</td>
+		            <td scope="col">Preço de Custo</td>
+		            <td scope="col">Preço de Venda</td>
+		            <td scope="col">Lucro</td>
+		            <td scope="col">Margem de Lucro</td>
+		            <td scope="col">Ação</td>
+	           	</tr>
+	        </thead>
+	
+	        <tbody>
+	            <tr th:each="produto: ${listarProdutos}">
+	                <td th:text="${produto.id}"></td>
+	                <td th:text="${produto.nome}"></td>
+	                <td th:text="${produto.codigoBarras}"></td>
+	                <td th:text="${produto.unidadeMedida}"></td>
+	                <td th:text="${produto.estoque}"></td>
+	                <td th:text="${produto.precoCusto}" class="money"></td>
+	                <td th:text="${produto.precoVenda}" class="money"></td>
+	                <td th:text="${produto.lucro}" class="money"></td>
+	                <td th:text="${produto.margemLucro}" class="money"></td>
+	                <td colspan="2">
+	                    <a th:href="@{/editar-produto/{id}(id=${produto.id})}"><i class="fa-regular fa-pen-to-square" style="color: #000000; padding: 0 10px;"></i></a>
+	                    <a th:href="@{/remover-produto/{id}(id=${produto.id})}"><i class="fa-solid fa-trash" style="color: #000000; padding: 0 10px;"></i></a>
+	                </td>
+	
+	            </tr>
+	        </tbody>
+	     </table>
+        <a href="/cadastro-produto" class="btn btn-primary"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Cadastrar</a>
+        <a href="/administrativo" class="btn btn-danger"><i class="fa-solid fa-share" style="color: #ffffff;"></i> Voltar</a>
+    </div>
+    
+<div th:insert="~{layouts/footer}"></div>

@@ -1,0 +1,45 @@
+<head th:insert="~{layouts/header}">
+<div th:insert="~{layouts/nav}"></div>
+
+    <div class="container-fluid">
+    
+	     <table class="table" id="tabela">
+	        <thead class="table-dark">
+	           	<tr>
+	           		<td scope="col">#</td>
+		            <td scope="col">Fornecedor</td>
+		            <td scope="col">CNPJ</td>
+		            <td scope="col">Telefone</td>
+		            <td scope="col">Endereco</td>
+		            <td scope="col">Numero</td>
+		            <td scope="col">Bairro</td>
+		            <td scope="col">E-mail</td>
+		            <td scope="col">Cidade</td>
+		            <td scope="col">Ação</td>
+	           	</tr>
+	        </thead>
+	
+	        <tbody>
+	            <tr th:each="fornecedor: ${listarFornecedores}">
+	                <td th:text="${fornecedor.id}"></td>
+	                <td th:text="${fornecedor.nome}"></td>
+	                <td th:text="${fornecedor.cnpj}"></td>
+	                <td th:text="${fornecedor.telefone}"></td>
+	                <td th:text="${fornecedor.endereco}"></td>
+	                <td th:text="${fornecedor.numero}"></td>
+	                <td th:text="${fornecedor.bairro}"></td>
+	                <td th:text="${fornecedor.email}"></td>
+	                <td th:text="${fornecedor.cidade.nome}"></td>
+	                <td colspan="2">
+	                    <a th:href="@{/editar-fornecedor/{id}(id=${fornecedor.id})}"><i class="fa-regular fa-pen-to-square" style="color: #000000; padding: 0 10px;"></i></a>
+	                    <a th:href="@{/remover-fornecedor/{id}(id=${fornecedor.id})}"><i class="fa-solid fa-trash" style="color: #000000; padding: 0 10px;"></i></a>
+	                </td>
+	
+	            </tr>
+	        </tbody>
+	     </table>
+        <a href="/cadastro-fornecedor" class="btn btn-primary"><i class="fa-solid fa-plus" style="color: #ffffff;"></i> Cadastrar</a>
+        <a href="/administrativo" class="btn btn-danger"><i class="fa-solid fa-share" style="color: #ffffff;"></i> Voltar</a>
+    </div>
+    
+<div th:insert="~{layouts/footer}"></div>

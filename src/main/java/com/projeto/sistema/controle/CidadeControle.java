@@ -24,7 +24,7 @@ public class CidadeControle {
 	
 	@GetMapping("/cadastro-cidade")
 	public ModelAndView cadastrar(Cidade cidade) {
-		ModelAndView mv = new ModelAndView("administrativo/cidades/cadastro");
+		ModelAndView mv = new ModelAndView("administrativo/cidade/cadastro");
 		mv.addObject("cidade", cidade);
 		mv.addObject("listaEstados", estadoRepositorio.findAll());
 		return mv;
@@ -32,7 +32,7 @@ public class CidadeControle {
 	
 	@GetMapping("/listar-cidade")
 	public ModelAndView listar() {
-		ModelAndView mv = new ModelAndView("administrativo/cidades/lista");
+		ModelAndView mv = new ModelAndView("administrativo/cidade/lista");
 		return mv.addObject("listarCidades", cidadeRepositorio.findAll());
 	}
 	
