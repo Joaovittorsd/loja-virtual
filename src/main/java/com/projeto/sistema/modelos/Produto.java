@@ -6,10 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name="produtos")
 public class Produto implements Serializable {
 
 	private static final long serialVersionUID = 1L;

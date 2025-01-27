@@ -1,0 +1,35 @@
+<head th:insert="~{layouts/header}">
+<div th:insert="~{layouts/nav}"></div>
+    
+<div class="container col-md-3">
+	<form action="/salvar-entrada" th:object="${entrada}" method="POST">
+	<div class="mb-3">
+		<div class="col-md-5">
+			<label for="id" class="form-label">Registro</label>
+			<input type="text" readonly="true" class="form-control" id="nome" th:field="*{id}">
+		</div>
+		    
+		<label for="nome" class="form-label">Observação::</label>
+		<input type="text" required class="form-control" id="nome" th:field="*{observacao}">
+		
+		<label for="estado" class="form-label">Funcionário:</label>
+		<select th:field="*{funcionario}" class="form-select">
+			<option th:each="est : ${listaFuncionarios}" th:value="${est.id}" th:text="${est.nome}"></option>
+		</select>
+		
+		<label for="estado" class="form-label">Fornecedores:</label>
+		<select th:field="*{fornecedor}" class="form-select">
+			<option th:each="est : ${listaFornecedores}" th:value="${est.id}" th:text="${est.nome}"></option>
+		</select>
+		  
+	</div>
+	
+	<a href="#" class="navbar-brand">
+	<button type="submit" class="btn btn-primary"><i class="fa-regular fa-floppy-disk" style="color: #ffffff;"></i> Salvar</button>
+	</a>
+	<a href="/administrativo" class="btn btn-danger"><i class="fa-solid fa-share" style="color: #ffffff;"></i> Voltar</a>
+	<a href="/listar-entrada" class="btn btn-success"><i class="fa-solid fa-list" style="color: #ffffff;"></i> Listar</a>
+	</form>
+</div>
+
+<div th:insert="~{layouts/footer}"></div>
