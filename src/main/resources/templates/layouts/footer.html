@@ -1,0 +1,53 @@
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" 
+            integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#cpf').mask('000.000.000-00');
+            $('#telefone').mask('(00) 00000-0000');
+            $('#cep').mask('00000-000');
+            $('#cpf').mask('000.000.000-00');
+	    	$('#telefone').mask('(00) 00000-0000');
+        });
+       
+        $(document).ready(function () {
+		    getDatatable('#tabela');
+		})
+		
+		function getDatatable(id) {
+		    $(id).DataTable({
+		        "ordering": true,
+		        "paging": true,
+		        "searching": true,
+		        "oLanguage": {
+		            "sEmptyTable": "Nenhum registro encontrado na tabela",
+		            "sInfo": "Mostrar _START_ at&eacute; _END_ de _TOTAL_ registros",
+		            "sInfoEmpty": "Mostrar 0 at&eacute; 0 de 0 Registros",
+		            "sInfoFiltered": "(Filtrar de _MAX_ total registros)",
+		            "sInfoPostFix": "",
+		            "sInfoThousands": ".",
+		            "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+		            "sLoadingRecords": "Carregando...",
+		            "sProcessing": "Processando...",
+		            "sZeroRecords": "Nenhum registro encontrado",
+		            "sSearch": "Pesquisar",
+		            "oPaginate": {
+		                "sNext": "Proximo",
+		                "sPrevious": "Anterior",
+		                "sFirst": "Primeiro",
+		                "sLast": "Ultimo"
+		            },
+		            "oAria": {
+		                "sSortAscending": ": Ordenar colunas de forma ascendente",
+		                "sSortDescending": ": Ordenar colunas de forma descendente"
+		            }
+		        }
+		    });
+		}
+    </script>
+</body>
+</html>
